@@ -159,24 +159,24 @@ public class Main {
         System.out.println();
 
 
-            int new2Array[][] = new int[5][3];
-            for (int j = 0; j < new2Array.length; j++) {
-                for (int k = 0; k < new2Array[j].length; k++) {
-                    new2Array[j][k] = ThreadLocalRandom.current().nextInt(1, 10);
+        int new2Array[][] = new int[5][3];
+        for (int j = 0; j < new2Array.length; j++) {
+            for (int k = 0; k < new2Array[j].length; k++) {
+                new2Array[j][k] = ThreadLocalRandom.current().nextInt(1, 10);
 
-                    System.out.print(new2Array[j][k] + " ");
-                }
-                System.out.println();
+                System.out.print(new2Array[j][k] + " ");
             }
+            System.out.println();
+        }
 
 
         System.out.println();
-            boolean logikai[][] = new boolean[5][3];
-            for (int k = 0; k < new2Array.length; k++) {
-                for (int l = 0; l < newArray[k].length; l++) {
-                    logikai[k][l] = new2Array[k][l] % 2 == 0;
-                }
+        boolean logikai[][] = new boolean[5][3];
+        for (int k = 0; k < new2Array.length; k++) {
+            for (int l = 0; l < newArray[k].length; l++) {
+                logikai[k][l] = new2Array[k][l] % 2 == 0;
             }
+        }
 
         for (int j = 0; j < logikai.length; j++) {
             for (int k = 0; k < logikai[j].length; k++) {
@@ -184,18 +184,49 @@ public class Main {
             }
             System.out.println();
         }
-//            int[] szamTomb = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-//
-//            boolean[] logikaiTomb = new boolean[szamTomb.length];
-//
-//            for (int v = 0; v < szamTomb.length; v++) {
-//                logikaiTomb[v] = szamTomb[v] % 2 == 0;
-//            }
-//
-//            // Kiíratás ellenőrzés céljából
-//            for (int b = 0; b < logikaiTomb.length; b++) {
-//                System.out.println(logikaiTomb[b]);
-//            }
-//        }
-    }}
+
+
+        args1(args);
+//Készíts programot, ami bekér egy egész számot argumentumból, aminek 1-10 közt kell lennie! A program hozzon
+// létre egy ekkora 1 dimenziós tömböt, és töltse fel minden elemét úgy, hogy az adott indexen lévő elem az adott
+// index értékének négyzete legyen! Pl: 0, 1, 4, 9, 16.. Ezt írja is ki!
+
+
+
+
+
+        //    Készíts programot, ami létrehoz egy 10 elemű 1 dimenziós tömböt úgy, hogy a
+//    páros indexeken " " karakter, a páratlanokon "#" karakter legyen! Írja is ki ezt!
+
+        char[] karitombi = new char[10];
+        char semmi = ' ';
+        char krixkrax = '#';
+        for (int j = 0; j < karitombi.length; j++) {
+            if (j % 2 == 0) {
+                karitombi[j] = semmi;
+            }
+            if (j % 2 != 0) {
+                karitombi[j] = krixkrax;
+            }
+
+        }
+        System.out.print(Arrays.toString(karitombi));
+
+    }
+
+
+    //Készíts programot, ami bekér egy egész számot argumentumból, aminek 1-10 közt kell lennie!
+// A program hozzon létre egy ekkora 1 dimenziós tömböt, és töltse fel minden elemét egy véletlen egész számmal!
+// A program írja is ki ezt!
+    public static void args1(String[] args) {
+        int oneD[] = new int[Integer.parseInt(args[0])];
+        for (int i = 0; i < oneD.length; i++) {
+            oneD[i] = ThreadLocalRandom.current().nextInt(1, 200);
+        }
+        System.out.print(Arrays.toString(oneD));
+
+    }
+
+
+}
 

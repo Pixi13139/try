@@ -174,7 +174,7 @@ public class Main {
         boolean logikai[][] = new boolean[5][3];
         for (int k = 0; k < new2Array.length; k++) {
             for (int l = 0; l < newArray[k].length; l++) {
-                logikai[k][l] = new2Array[k][l] % 2 == 0;
+                logikai[k][l] = (new2Array[k][l] % 2 == 0);
             }
         }
 
@@ -187,13 +187,11 @@ public class Main {
 
 
         args1(args);
-//Készíts programot, ami bekér egy egész számot argumentumból, aminek 1-10 közt kell lennie! A program hozzon
-// létre egy ekkora 1 dimenziós tömböt, és töltse fel minden elemét úgy, hogy az adott indexen lévő elem az adott
-// index értékének négyzete legyen! Pl: 0, 1, 4, 9, 16.. Ezt írja is ki!
-
-
-
-
+        System.out.println();
+        args2(args);
+        System.out.println();
+        sakkos(args);
+        System.out.println();
 
         //    Készíts programot, ami létrehoz egy 10 elemű 1 dimenziós tömböt úgy, hogy a
 //    páros indexeken " " karakter, a páratlanokon "#" karakter legyen! Írja is ki ezt!
@@ -227,6 +225,66 @@ public class Main {
 
     }
 
+    //Készíts programot, ami bekér egy egész számot argumentumból, aminek 1-10 közt kell lennie! A program hozzon
+// létre egy ekkora 1 dimenziós tömböt, és töltse fel minden elemét úgy, hogy az adott indexen lévő elem az adott
+// index értékének négyzete legyen! Pl: 0, 1, 4, 9, 16.. Ezt írja is ki!
+
+    public static void args2(String[] args) {
+        int oneD[] = new int[Integer.parseInt(args[0])];
+        for (int i = 0; i < oneD.length; i++) {
+            oneD[i] = i * i;
+        }
+        System.out.print(Arrays.toString(oneD));
+    }
+
+//    7. Feladat: Készíts programot, ami bekér két számot argumentumból, és létrehoz egy n * m-es 2d tömböt,
+//    amiben hozzon létre egy sakktábla mintát. A fehér legyen " " karakter, míg a fekete "#" karakter!
+//    Írja is ki ezt igényes formában!
+
+    public static void sakkos(String[] args) {
+        if (args.length < 2) System.exit(0);
+        char feher = '@';
+        char fekete = '#';
+        int n = Integer.parseInt(args[0]);
+        int m = Integer.parseInt(args[1]);
+        char[][] sakkos = new char[n][m];
+        for (int i = 0; i < sakkos.length; i++) {
+            for (int j = 0; j < sakkos[i].length; j++) {
+                if ((i + j) % 2 == 0){sakkos[i][j] = feher;}
+                if ((i + j) % 2 != 0){sakkos[i][j] = fekete;}
+            }
+        }
+        for (int i = 0; i < sakkos.length; i++) {
+            for (int j = 0; j < sakkos[i].length; j++) {
+                System.out.print(sakkos[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+
+//    public static void sakkos(String[] args) {
+//        if (args.length < 2) System.exit(0);
+//        char feher = '@';
+//        char fekete = '#';
+//        int n = Integer.parseInt(args[0]);
+//        int m = Integer.parseInt(args[1]);
+//        char[][] sakkos = new char[n][m];
+//        for (int i = 0; i < sakkos.length; i++) {
+//            for (int j = 0; j < sakkos[i].length; j++) {
+//                if ((i + j) % 2 == 0) {
+//                    sakkos[i][j] = feher;
+//                } else {
+//                    sakkos[i][j] = fekete;
+//                }
+//            }
+//        }
+//        for (int i = 0; i < sakkos.length; i++) {
+//            for (int j = 0; j < sakkos[i].length; j++) {
+//                System.out.print(sakkos[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
 }
-

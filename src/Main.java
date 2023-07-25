@@ -146,7 +146,6 @@ public class Main {
         }
 
         System.out.println();
-        System.out.println();
         for (int j = 0; j < newArray.length; j++) {
             for (int k = 0; k < newArray[j].length; k++) {
                 if (newArray[j][k] % 3 == 0) {
@@ -247,6 +246,27 @@ int factorial = 1;
 
         }
         System.out.print(Arrays.toString(karitombi));
+
+//        Készíts programot, ami bekér két számot, és kiírja az azok közt lévő számok összegét!
+
+        System.out.println();
+int c = 6;
+int d = 11;
+        int[] tombike = new int[d-c-1];
+
+        for (int j = c + 1; j < d; j++) {
+            for (int k = 0; k < tombike.length; k++) {
+                tombike[k] = j;
+                j++;
+            }
+        }
+        System.out.print(Arrays.toString(tombike));
+        System.out.println();
+        int osszeg = 0;
+        for (int j = 0; j < tombike.length; j++) {
+            osszeg = tombike[j] + osszeg;
+        }
+        System.out.println("A két szám közötti számok összege: " + osszeg);
 
     }
 

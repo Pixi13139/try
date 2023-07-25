@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
@@ -185,6 +186,27 @@ public class Main {
             System.out.println();
         }
 
+        Scanner newscan = new Scanner(System.in);
+        System.out.println("Írj egy természetes egész számot!");
+        int numberr = newscan.nextInt();
+int factorial = 1;
+        for (int j = numberr; j >0 ; j--)  {
+                if (j > 0){factorial = factorial * j;}else System.out.println("HIBA");
+            }
+
+
+        int[] valamicsoda = new int[]{2, 4, 6, 10};
+        int sumResult = 0;
+        for (int j = 0; j < valamicsoda.length; j++) {
+            sumResult = sumResult + valamicsoda[j];}
+
+        System.out.println(sumResult + " -Ez a tömb elemeinek összeadása");
+
+
+
+        System.out.println(factorial);
+
+
 
         args1(args);
         System.out.println();
@@ -192,6 +214,22 @@ public class Main {
         System.out.println();
         sakkos(args);
         System.out.println();
+
+
+
+        String stringpractice = " cica kutya madár";
+        String tisztitott = stringpractice.trim();
+        System.out.println(tisztitott);
+
+        String valami = "kutya cica";
+        char[] karakterTomb = valami.toCharArray();
+
+// Karakterek kiíratása
+        for (char karakter : karakterTomb) {
+            System.out.print(karakter + " ");
+        }
+        System.out.println(valami.toUpperCase());
+
 
         //    Készíts programot, ami létrehoz egy 10 elemű 1 dimenziós tömböt úgy, hogy a
 //    páros indexeken " " karakter, a páratlanokon "#" karakter legyen! Írja is ki ezt!
@@ -263,28 +301,5 @@ public class Main {
 
     }
 
-//    public static void sakkos(String[] args) {
-//        if (args.length < 2) System.exit(0);
-//        char feher = '@';
-//        char fekete = '#';
-//        int n = Integer.parseInt(args[0]);
-//        int m = Integer.parseInt(args[1]);
-//        char[][] sakkos = new char[n][m];
-//        for (int i = 0; i < sakkos.length; i++) {
-//            for (int j = 0; j < sakkos[i].length; j++) {
-//                if ((i + j) % 2 == 0) {
-//                    sakkos[i][j] = feher;
-//                } else {
-//                    sakkos[i][j] = fekete;
-//                }
-//            }
-//        }
-//        for (int i = 0; i < sakkos.length; i++) {
-//            for (int j = 0; j < sakkos[i].length; j++) {
-//                System.out.print(sakkos[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
-//    }
 
 }
